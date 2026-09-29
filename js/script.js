@@ -55,3 +55,37 @@ function criarCoracoes(quantidade = 5) {
 }
 
 setInterval(() => criarCoracoes(2), 1800);
+
+// ==============================
+// MÚSICA
+// ==============================
+
+const music = document.getElementById('music');
+const musicBtn = document.getElementById('musicBtn');
+const musicIcon = document.getElementById('musicIcon');
+const musicText = document.getElementById('musicText');
+
+musicBtn.addEventListener('click', () => {
+  if (music.paused) {
+    music.play();
+
+    musicIcon.textContent = 'Ⅱ';
+    musicText.textContent = 'Pausar música';
+
+    musicBtn.classList.add('playing');
+  } else {
+    music.pause();
+
+    musicIcon.textContent = '▶';
+    musicText.textContent = 'Nossa música';
+
+    musicBtn.classList.remove('playing');
+  }
+});
+
+music.addEventListener('ended', () => {
+  musicIcon.textContent = '▶';
+  musicText.textContent = 'Nossa música';
+
+  musicBtn.classList.remove('playing');
+});

@@ -16,10 +16,22 @@
       <p class="eyebrow">Hoje é o seu dia ✨</p>
       <h1>Feliz aniversário,<br><span>meu amor ❤️</span></h1>
       <p class="subtitle">espero que goste</p>
-      <button class="scroll-btn" onclick="document.querySelector('#memorias').scrollIntoView({behavior:'smooth'})">
-        Nossa história ↓
-      </button>
-    </section>
+
+<button class="scroll-btn" onclick="document.querySelector('#memorias').scrollIntoView({behavior:'smooth'})">
+  CLIQUE AQUI ↓
+</button>
+
+<!-- MÚSICA -->
+<div class="music-player">
+  <button id="musicBtn" class="music-btn" type="button">
+    <span id="musicIcon">▶</span>
+    <span id="musicText"></span>
+  </button>
+
+  <audio id="music" loop>
+    <source src="audio/nossa-musica.mp3" type="audio/mpeg">
+  </audio>
+</div>
 
     <!-- MEMÓRIAS -->
     <section id="memorias" class="section">
