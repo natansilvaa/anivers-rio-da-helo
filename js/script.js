@@ -57,35 +57,21 @@ function criarCoracoes(quantidade = 5) {
 setInterval(() => criarCoracoes(2), 1800);
 
 // ==============================
-// MÚSICA
+// BOTÃO: MÚSICA + ROLAGEM
 // ==============================
 
 const music = document.getElementById('music');
-const musicBtn = document.getElementById('musicBtn');
-const musicIcon = document.getElementById('musicIcon');
-const musicText = document.getElementById('musicText');
+const scrollMusicBtn = document.getElementById('scrollMusicBtn');
 
-musicBtn.addEventListener('click', () => {
-  if (music.paused) {
-    music.play();
+scrollMusicBtn.addEventListener('click', () => {
 
-    musicIcon.textContent = 'Ⅱ';
-    musicText.textContent = 'Pausar música';
+  // Ativa a música
+  music.play().catch(error => {
+    console.log('Não foi possível iniciar a música:', error);
+  });
 
-    musicBtn.classList.add('playing');
-  } else {
-    music.pause();
-
-    musicIcon.textContent = '▶';
-    musicText.textContent = 'Nossa música';
-
-    musicBtn.classList.remove('playing');
-  }
-});
-
-music.addEventListener('ended', () => {
-  musicIcon.textContent = '▶';
-  musicText.textContent = 'Nossa música';
-
-  musicBtn.classList.remove('playing');
+  // Desce até a seção de memórias
+  document.querySelector('#memorias').scrollIntoView({
+    behavior: 'smooth'
+  });
 });
