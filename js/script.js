@@ -3,7 +3,7 @@
 // ==============================
 // Coloque aqui a data em que vocês começaram a namorar.
 // Exemplo: new Date('2025-03-15T00:00:00')
-const inicioRelacionamento = new Date('2025-01-01T00:00:00');
+const inicioRelacionamento = new Date('2023-03-25T00:19:59');
 
 function atualizarContador() {
   const agora = new Date();
